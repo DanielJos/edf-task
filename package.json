@@ -8,6 +8,7 @@
     "start": "tsc && node dist/example-client.js"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2"
+    "@types/node": "^22.10.2",
+    "@types/xmlhttprequest": "^1.8.2"
   }
 }
