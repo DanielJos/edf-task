@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "inlineSources": true,
+    "noImplicitAny": false,
+    
+    // Source from here
+    "sourceRoot": "/src",
+
+    // Put in here
+    "noEmit": false,
+    "outDir": "./dist"
+  },
+  "include": ["src"]
+}
