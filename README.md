@@ -26,6 +26,8 @@ Things you will be asked about:
 1. Fix the reference to module.exports = "GetBookListApiClient" to use ESModules `export default <ClassName>` (`BookSearchApiClient` not `GetBookListApiClient`)
 2. Use `()=>{}` func format to use the same `this` context
 3. Use promises
+4. Add `xml?.` to possibly null xml obj
+5. Use Array.from for childNodes
 
 ## Refacctor example-client.js
 1. Add a example-client.ts, and run with `tsc && node ./dist/example-client.js` (use `npm start`)
