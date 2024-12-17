@@ -1,11 +1,9 @@
-import { XMLHttpRequest } from "xmlhttprequest"
-
 type Book = {
-  title: string,
-  author: string,
-  isbn: string,
-  quantity: string,
-  price: string,
+  title: string | null,
+  author: string | null,
+  isbn: string | null,
+  quantity: string | null,
+  price: string | null,
 }
 
 class BookSearchApiClient {
@@ -17,7 +15,7 @@ class BookSearchApiClient {
 
   getBooksByAuthor = (authorName: string, limit: number): Promise<Book[]> => {
     return new Promise( (resolve, reject) => {
-      let result = [];
+      let result: Book[] = [];
   
       // Create a new request object
       const xhr = new XMLHttpRequest();
@@ -32,7 +30,7 @@ class BookSearchApiClient {
       );
 
       // `on load` of the request do the following
-      xhr.onload = function () {
+      xhr.onload = () => {
         if (xhr.status == 200) {
           if (this.format == "json") {
             const json = JSON.parse(xhr.responseText);
@@ -49,7 +47,7 @@ class BookSearchApiClient {
           } else if (this.format == "xml") {
             const xml = xhr.responseXML;
     
-            result = xml.documentElement.childNodes.map(function (item) {
+            result = Array.from(xml?.documentElement.childNodes || []).map(function (item) {
               return {
                 title: item.childNodes[0].childNodes[0].nodeValue,
                 author: item.childNodes[0].childNodes[1].nodeValue,
